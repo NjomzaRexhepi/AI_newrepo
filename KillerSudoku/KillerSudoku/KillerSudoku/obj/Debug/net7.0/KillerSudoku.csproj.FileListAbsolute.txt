@@ -1,0 +1,14 @@
+C:\Users\HP\source\repos\Artificial_Intelligence_Problems\KillerSudoku\KillerSudoku\KillerSudoku\bin\Debug\net7.0\KillerSudoku.exe
+C:\Users\HP\source\repos\Artificial_Intelligence_Problems\KillerSudoku\KillerSudoku\KillerSudoku\bin\Debug\net7.0\KillerSudoku.deps.json
+C:\Users\HP\source\repos\Artificial_Intelligence_Problems\KillerSudoku\KillerSudoku\KillerSudoku\bin\Debug\net7.0\KillerSudoku.runtimeconfig.json
+C:\Users\HP\source\repos\Artificial_Intelligence_Problems\KillerSudoku\KillerSudoku\KillerSudoku\bin\Debug\net7.0\KillerSudoku.dll
+C:\Users\HP\source\repos\Artificial_Intelligence_Problems\KillerSudoku\KillerSudoku\KillerSudoku\bin\Debug\net7.0\KillerSudoku.pdb
+C:\Users\HP\source\repos\Artificial_Intelligence_Problems\KillerSudoku\KillerSudoku\KillerSudoku\obj\Debug\net7.0\KillerSudoku.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\Artificial_Intelligence_Problems\KillerSudoku\KillerSudoku\KillerSudoku\obj\Debug\net7.0\KillerSudoku.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\Artificial_Intelligence_Problems\KillerSudoku\KillerSudoku\KillerSudoku\obj\Debug\net7.0\KillerSudoku.AssemblyInfo.cs
+C:\Users\HP\source\repos\Artificial_Intelligence_Problems\KillerSudoku\KillerSudoku\KillerSudoku\obj\Debug\net7.0\KillerSudoku.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\Artificial_Intelligence_Problems\KillerSudoku\KillerSudoku\KillerSudoku\obj\Debug\net7.0\KillerSudoku.dll
+C:\Users\HP\source\repos\Artificial_Intelligence_Problems\KillerSudoku\KillerSudoku\KillerSudoku\obj\Debug\net7.0\refint\KillerSudoku.dll
+C:\Users\HP\source\repos\Artificial_Intelligence_Problems\KillerSudoku\KillerSudoku\KillerSudoku\obj\Debug\net7.0\KillerSudoku.pdb
+C:\Users\HP\source\repos\Artificial_Intelligence_Problems\KillerSudoku\KillerSudoku\KillerSudoku\obj\Debug\net7.0\KillerSudoku.genruntimeconfig.cache
+C:\Users\HP\source\repos\Artificial_Intelligence_Problems\KillerSudoku\KillerSudoku\KillerSudoku\obj\Debug\net7.0\ref\KillerSudoku.dll
