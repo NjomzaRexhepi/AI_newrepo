@@ -20,6 +20,15 @@ namespace SATProblemNamespace
             this.cannotSitTogether = new List<(int, int)>();
             this.mustSitTogether = new List<(int, int)>();
         }
+        public void AddCannotSitTogether(int guestA, int guestB)
+        {
+            cannotSitTogether.Add((guestA, guestB));
+        }
+
+        public void AddMustSitTogether(int guestA, int guestB)
+        {
+            mustSitTogether.Add((guestA, guestB));
+        }
 
 
     }
