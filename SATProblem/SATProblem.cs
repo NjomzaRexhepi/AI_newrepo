@@ -30,6 +30,24 @@ namespace SATProblemNamespace
             mustSitTogether.Add((guestA, guestB));
         }
 
+        public void Solve()
+        {
+            CpModel model = new CpModel();
+
+
+            BoolVar[,] x = new BoolVar[numGuests, numTables];
+            for (int i = 0; i < numGuests; i++)
+            {
+                for (int j = 0; j < numTables; j++)
+                {
+                    x[i, j] = model.NewBoolVar($"x[{i},{j}]");
+                }
+            }
+
+
+
+        }
+
 
     }
 }
