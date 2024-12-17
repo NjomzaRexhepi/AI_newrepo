@@ -44,6 +44,18 @@ namespace SATProblemNamespace
                 }
             }
 
+            for (int i = 0; i < numGuests; i++)
+            {
+                List<ILiteral> tableAssignments = new List<ILiteral>();
+                for (int j = 0; j < numTables; j++)
+                {
+                    tableAssignments.Add(x[i, j]);
+                }
+                model.AddExactlyOne(tableAssignments);
+            }
+
+
+
 
 
         }
