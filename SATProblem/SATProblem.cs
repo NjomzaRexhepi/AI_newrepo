@@ -90,14 +90,27 @@ namespace SATProblemNamespace
             CpSolver solver = new CpSolver();
             CpSolverStatus status = solver.Solve(model);
 
-
-
-
-
-
+            if (status == CpSolverStatus.Feasible || status == CpSolverStatus.Optimal)
+            {
+                Console.WriteLine("Zgjidhje e mundshme:");
+                for (int j = 0; j < numTables; j++)
+                {
+                    Console.WriteLine($"Tavolina {j + 1}:");
+                    for (int i = 0; i < numGuests; i++)
+                    {
+                        if (solver.BooleanValue(x[i, j]))
+                        {
+                            Console.Write($"M{i + 1} ");
+                        }
+                    }
+                    Console.WriteLine();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Nuk ka zgjidhje të mundshme për kushtet e dhëna.");
+            }
         }
-
-
     }
-}
 
+}
