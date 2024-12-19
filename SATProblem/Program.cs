@@ -26,6 +26,22 @@ class Program
         }
 
 
+        Console.WriteLine("Jepni numrin e çifteve të mysafirëve që DUHET të ulen së bashku:");
+        int togetherCount = int.Parse(Console.ReadLine() ?? "0");
+        for (int i = 0; i < togetherCount; i++)
+        {
+            Console.Write($"Çifti {i + 1} (jepni si format M1 M2): ");
+            var input = Console.ReadLine()?.Split() ?? new string[0];
+            if (input.Length < 2) continue;
+
+            int guestA = int.Parse(input[0][1..]);
+            int guestB = int.Parse(input[1][1..]);
+            problem.AddMustSitTogether(guestA, guestB);
+        }
+
+
+
+
 
 
     }
