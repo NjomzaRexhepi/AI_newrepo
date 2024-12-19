@@ -5,6 +5,11 @@ class Program
 {
     static void Main(string[] args)
     {
+        int numGuests = 100;
+        int numTables = 10;
+        int seatsPerTable = 10;
+
+
 
     }
 }
