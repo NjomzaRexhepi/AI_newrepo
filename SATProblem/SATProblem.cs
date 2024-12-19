@@ -66,6 +66,16 @@ namespace SATProblemNamespace
             }
 
 
+            foreach (var pair in cannotSitTogether)
+            {
+                int guestA = pair.Item1 - 1;
+                int guestB = pair.Item2 - 1;
+                for (int j = 0; j < numTables; j++)
+                {
+                    model.AddBoolOr(new ILiteral[] { x[guestA, j].Not(), x[guestB, j].Not() });
+                }
+            }
+
 
 
 
