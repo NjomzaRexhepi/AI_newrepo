@@ -76,6 +76,18 @@ namespace SATProblemNamespace
                 }
             }
 
+            foreach (var pair in mustSitTogether)
+            {
+                int guestA = pair.Item1 - 1;
+                int guestB = pair.Item2 - 1;
+                for (int j = 0; j < numTables; j++)
+                {
+                    model.AddImplication(x[guestA, j], x[guestB, j]);
+                    model.AddImplication(x[guestB, j], x[guestA, j]);
+                }
+            }
+
+
 
 
 
