@@ -87,6 +87,10 @@ namespace SATProblemNamespace
                 }
             }
 
+            CpSolver solver = new CpSolver();
+            CpSolverStatus status = solver.Solve(model);
+
+
 
 
 
