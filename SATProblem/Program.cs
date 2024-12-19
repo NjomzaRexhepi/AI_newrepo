@@ -10,6 +10,9 @@ class Program
         int seatsPerTable = 10;
 
 
+        var problem = new SATProblem(numGuests, numTables, seatsPerTable);
+
+
 
     }
 }
