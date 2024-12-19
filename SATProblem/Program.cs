@@ -39,10 +39,7 @@ class Program
             problem.AddMustSitTogether(guestA, guestB);
         }
 
-
-
-
-
+        problem.Solve();
 
     }
 }
