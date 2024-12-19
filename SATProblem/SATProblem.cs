@@ -55,6 +55,17 @@ namespace SATProblemNamespace
             }
 
 
+            for (int j = 0; j < numTables; j++)
+            {
+                List<ILiteral> tableOccupants = new List<ILiteral>();
+                for (int i = 0; i < numGuests; i++)
+                {
+                    tableOccupants.Add(x[i, j]);
+                }
+                model.AddLinearConstraint(LinearExpr.Sum(tableOccupants), 0, seatsPerTable);
+            }
+
+
 
 
 
