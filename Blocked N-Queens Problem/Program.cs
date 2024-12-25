@@ -5,10 +5,114 @@ class BlockedNQueensAStar
 {
     static void Main()
     {
-        int N = 8;
-        int[,] blockedCells = { { 1, 3 }, { 4, 4 }, { 6, 3 } };
+        // Get user input for N (board size)
+        Console.Write("Enter the board size (N): ");
+        int N;
+        while (!int.TryParse(Console.ReadLine(), out N) || N < 1)
+        {
+            Console.Write("Invalid input. Please enter a positive integer for N: ");
+        }
 
-        SolveBlockedNQueensAStar(N, blockedCells);
+        // Get user input for blocked cells
+        Console.Write("Enter the number of blocked cells: ");
+        int blockedCount;
+        while (!int.TryParse(Console.ReadLine(), out blockedCount) || blockedCount < 0)
+        {
+            Console.Write("Invalid input. Please enter a non-negative integer for blocked cells count: ");
+        }
+
+        int[,] blockedOnes = new int[blockedCount, 2];
+
+        for (int i = 0; i < blockedCount; i++)
+        {
+            Console.WriteLine($"Enter the coordinates of blocked cell {i + 1} (row, col): ");
+            int row, col;
+            while (true)
+            {
+                Console.Write("Row: ");
+                if (!int.TryParse(Console.ReadLine(), out row) || row < 0 || row >= N)
+                {
+                    Console.WriteLine("Invalid row. It must be between 0 and N-1.");
+                    continue;
+                }
+
+                Console.Write("Column: ");
+                if (!int.TryParse(Console.ReadLine(), out col) || col < 0 || col >= N)
+                {
+                    Console.WriteLine("Invalid column. It must be between 0 and N-1.");
+                    continue;
+                }
+
+                // Check for duplicate blocked cells
+                bool duplicateFound = false;
+                for (int j = 0; j < i; j++)
+                {
+                    if (blockedOnes[j, 0] == row && blockedOnes[j, 1] == col)
+                    {
+                        duplicateFound = true;
+                        Console.WriteLine("This blocked cell already exists. Please enter a different one.");
+                        break;
+                    }
+                }
+
+                if (!duplicateFound)
+                {
+                    blockedOnes[i, 0] = row;
+                    blockedOnes[i, 1] = col;
+                    break;
+                }
+            }
+        }
+
+        // Validate inputs
+        if (!ValidateInputs(N, blockedOnes))
+        {
+            Console.WriteLine("Invalid inputs.");
+            return;
+        }
+
+        SolveBlockedNQueensAStar(N, blockedOnes);
+    }
+
+    static bool ValidateInputs(int N, int[,] blockedCells)
+    {
+        if (N < 1)
+        {
+            Console.WriteLine("Board size (N) must be greater than or equal to 1.");
+            return false;
+        }
+
+        // Validate blocked cells
+        if (blockedCells == null || blockedCells.GetLength(0) == 0)
+        {
+            Console.WriteLine("Blocked cells cannot be null or empty.");
+            return false;
+        }
+
+        var blockedSet = new HashSet<string>();
+
+        for (int i = 0; i < blockedCells.GetLength(0); i++)
+        {
+            int row = blockedCells[i, 0];
+            int col = blockedCells[i, 1];
+
+            if (row < 0 || row >= N || col < 0 || col >= N)
+            {
+                Console.WriteLine($"Blocked cell ({row}, {col}) is out of bounds.");
+                return false;
+            }
+
+            string key = $"{row},{col}";
+            if (blockedSet.Contains(key))
+            {
+                Console.WriteLine($"Duplicate blocked cell: ({row}, {col}).");
+                return false;
+            }
+
+            blockedSet.Add(key);
+        }
+
+        return true;
     }
 
     static void SolveBlockedNQueensAStar(int N, int[,] blockedCells)
@@ -198,7 +302,7 @@ class State
     public int[,] Board { get; }
     public int QueensPlaced { get; }
     public int G { get; }
-    public int Cost { get; } 
+    public int Cost { get; }
 
     public State(int[,] board, int queensPlaced, int cost)
     {
