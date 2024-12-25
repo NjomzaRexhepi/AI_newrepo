@@ -281,7 +281,7 @@ class PriorityQueue<T>
 
     public T Dequeue()
     {
-        if (Count == 0) throw new InvalidOperationException("The queue is empty.");
+        if (Count == 0) throw new InvalidOperationException("Invalid - The queue is empty.");
 
         var firstPair = _elements.First();
         var item = firstPair.Value.Dequeue();
