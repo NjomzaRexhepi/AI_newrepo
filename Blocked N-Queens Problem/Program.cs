@@ -5,15 +5,13 @@ class BlockedNQueensAStar
 {
     static void Main()
     {
-        // Get user input for N (board size)
-        Console.Write("Enter the board size (N): ");
+        Console.Write("Enter the board size: ");
         int N;
         while (!int.TryParse(Console.ReadLine(), out N) || N < 1)
         {
-            Console.Write("Invalid input. Please enter a positive integer for N: ");
+            Console.Write("Invalid input. Please enter a positive integer for board size: ");
         }
 
-        // Get user input for blocked cells
         Console.Write("Enter the number of blocked cells: ");
         int blockedCount;
         while (!int.TryParse(Console.ReadLine(), out blockedCount) || blockedCount < 0)
