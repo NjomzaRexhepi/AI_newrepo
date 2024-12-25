@@ -5,8 +5,8 @@ class BlockedNQueensAStar
 {
     static void Main()
     {
-        int N = 8; // Size of the board
-        int[,] blockedCells = { { 1, 3 }, { 4, 4 }, { 6, 3 } }; // Blocked cells
+        int N = 8;
+        int[,] blockedCells = { { 1, 3 }, { 4, 4 }, { 6, 3 } };
 
         SolveBlockedNQueensAStar(N, blockedCells);
     }
@@ -87,7 +87,7 @@ class BlockedNQueensAStar
         {
             int row = blockedCells[i, 0];
             int col = blockedCells[i, 1];
-            board[row, col] = -1; // Mark cell as blocked
+            board[row, col] = -1;
         }
 
         return board;
@@ -115,13 +115,11 @@ class BlockedNQueensAStar
     {
         int conflicts = 0;
 
-        // Check column
         for (int i = 0; i < N; i++)
         {
             if (i != row && board[i, col] == 1) conflicts++;
         }
 
-        // Check diagonals
         for (int i = -N; i < N; i++)
         {
             if (i != 0 && IsValid(row + i, col + i, N) && board[row + i, col + i] == 1) conflicts++;
@@ -138,21 +136,18 @@ class BlockedNQueensAStar
 
     static bool CanPlaceQueen(int[,] board, int row, int col)
     {
-        if (board[row, col] == -1) return false; // Blocked cell
+        if (board[row, col] == -1) return false;
 
-        // Check column
         for (int i = 0; i < row; i++)
         {
             if (board[i, col] == 1) return false;
         }
 
-        // Check upper-left diagonal
         for (int i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--)
         {
             if (board[i, j] == 1) return false;
         }
 
-        // Check upper-right diagonal
         for (int i = row - 1, j = col + 1; i >= 0 && j < board.GetLength(1); i--, j++)
         {
             if (board[i, j] == 1) return false;
@@ -187,11 +182,11 @@ class BlockedNQueensAStar
             for (int j = 0; j < N; j++)
             {
                 if (board[i, j] == -1)
-                    Console.Write("X "); // Blocked cell
+                    Console.Write("X ");
                 else if (board[i, j] == 1)
-                    Console.Write("Q "); // Queen
+                    Console.Write("Q ");
                 else
-                    Console.Write(". "); // Empty cell
+                    Console.Write(". ");
             }
             Console.WriteLine();
         }
@@ -202,8 +197,8 @@ class State
 {
     public int[,] Board { get; }
     public int QueensPlaced { get; }
-    public int G { get; } // Cost to reach this state
-    public int Cost { get; } // Total cost (G + heuristic)
+    public int G { get; }
+    public int Cost { get; } 
 
     public State(int[,] board, int queensPlaced, int cost)
     {
