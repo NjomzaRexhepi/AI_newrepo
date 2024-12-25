@@ -30,14 +30,14 @@ class BlockedNQueensAStar
                 Console.Write("Row: ");
                 if (!int.TryParse(Console.ReadLine(), out row) || row < 0 || row >= N)
                 {
-                    Console.WriteLine("Invalid row. It must be between 0 and N-1.");
+                    Console.WriteLine("Invalid row. It must be between 0 and board size-1.");
                     continue;
                 }
 
                 Console.Write("Column: ");
                 if (!int.TryParse(Console.ReadLine(), out col) || col < 0 || col >= N)
                 {
-                    Console.WriteLine("Invalid column. It must be between 0 and N-1.");
+                    Console.WriteLine("Invalid column. It must be between 0 and board size-1.");
                     continue;
                 }
 
