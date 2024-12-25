@@ -1,5 +1,5 @@
-## Teknikat e Informuara të Kërkimit (Uninformed Search Techniques), CSP Problems, SAT Problems
-# 1. Blocked N-Queens Problem
+# Teknikat e Informuara të Kërkimit (Informed Search Techniques), CSP Problems, SAT Problems
+## 1. Blocked N-Queens Problem
 Përshkrimi https://shorturl.at/33eJo
 <br>
 Kërkesat e detyrës:<br>
