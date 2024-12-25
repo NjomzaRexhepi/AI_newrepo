@@ -13,7 +13,6 @@ namespace KillerSudoku
             int[,] grid;
             List<Cage> cages;
 
-            // Setup grid and cages based on difficulty
             switch (difficultyLevel)
             {
                 case 1:
@@ -36,7 +35,6 @@ namespace KillerSudoku
                     return;
             }
 
-            // Solve the Killer Sudoku puzzle
             if (KillerSudokuClass.SolveKillerSudoku(grid, cages))
             {
                 Console.WriteLine("Killer Sudoku solved successfully:");
@@ -48,7 +46,6 @@ namespace KillerSudoku
             }
         }
 
-        // Easy Grid and Cages
         static int[,] GetEasyGrid()
         {
             return new int[9, 9]
@@ -78,7 +75,6 @@ namespace KillerSudoku
             };
         }
 
-        // Medium Grid and Cages
         static int[,] GetMediumGrid()
         {
             return new int[9, 9]
@@ -108,7 +104,6 @@ namespace KillerSudoku
             };
         }
 
-        // Hard Grid and Cages
         static int[,] GetHardGrid()
         {
             return new int[9, 9]
