@@ -41,7 +41,6 @@ class BlockedNQueensAStar
                     continue;
                 }
 
-                // Check for duplicate blocked cells
                 bool duplicateFound = false;
                 for (int j = 0; j < i; j++)
                 {
@@ -62,55 +61,7 @@ class BlockedNQueensAStar
             }
         }
 
-        // Validate inputs
-        if (!ValidateInputs(N, blockedOnes))
-        {
-            Console.WriteLine("Invalid inputs.");
-            return;
-        }
-
         SolveBlockedNQueensAStar(N, blockedOnes);
-    }
-
-    static bool ValidateInputs(int N, int[,] blockedCells)
-    {
-        if (N < 1)
-        {
-            Console.WriteLine("Board size (N) must be greater than or equal to 1.");
-            return false;
-        }
-
-        // Validate blocked cells
-        if (blockedCells == null || blockedCells.GetLength(0) == 0)
-        {
-            Console.WriteLine("Blocked cells cannot be null or empty.");
-            return false;
-        }
-
-        var blockedSet = new HashSet<string>();
-
-        for (int i = 0; i < blockedCells.GetLength(0); i++)
-        {
-            int row = blockedCells[i, 0];
-            int col = blockedCells[i, 1];
-
-            if (row < 0 || row >= N || col < 0 || col >= N)
-            {
-                Console.WriteLine($"Blocked cell ({row}, {col}) is out of bounds.");
-                return false;
-            }
-
-            string key = $"{row},{col}";
-            if (blockedSet.Contains(key))
-            {
-                Console.WriteLine($"Duplicate blocked cell: ({row}, {col}).");
-                return false;
-            }
-
-            blockedSet.Add(key);
-        }
-
-        return true;
     }
 
     static void SolveBlockedNQueensAStar(int N, int[,] blockedCells)
