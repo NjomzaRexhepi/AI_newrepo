@@ -16,18 +16,18 @@ namespace KillerSudoku
             switch (difficultyLevel)
             {
                 case 1:
-                    grid = GetEasyGrid();
-                    cages = GetEasyCages();
+                    grid = GetEasyGrid();  //high clues
+                    cages = GetEasyCages();  //large cages
                     break;
 
                 case 2:
-                    grid = GetMediumGrid();
-                    cages = GetMediumCages();
+                    grid = GetMediumGrid();   //fewer clues
+                    cages = GetMediumCages();   //moderate sized cages
                     break;
 
                 case 3:
-                    grid = GetHardGrid();
-                    cages = GetHardCages();
+                    grid = GetHardGrid();   //mostly empty
+                    cages = GetHardCages();   //small cages
                     break;
 
                 default:
