@@ -15,3 +15,12 @@ Kërkesa e detyrës: Të definohet SAT formula për zgjidhjen e këtij problemi.
 <br>
 ## 3. Constraint Programming Problem
 Kërkesa e detyrës: Të zgjidhet problemi Killer Sudoku (https://sudoku.com/killer) duke aplikuar Constraint Programming (CSP)
+## 4. Teoria e lojrave - MiniMax Algorithm 
+Kërkesa e detyrës: Të aplikohet MiniMax algoritmi me Alpha-Beta pruning për lojën e shahut.
+
+Detaje rreth detyrës:
+Konfigurimi startues le te jete nje mid-game ku figurat kane levizur maksimalisht pa u be trade
+Funksioni i vleresimit le te mbeshtetet ne: Shumen e mundesive te levizjes per secilen figure te lojtarit aktual dhe shperblimin me pike varesisht prej figures qe i ka marr kundershtarit (peshat e figurave i vendosni ju, psh. piuni->1)
+I bejme prune levizjet qe nuk kane kuptim me u zgjeru, psh. piuni merr mbretereshen, etj.
+Levizjet qe duhet te shtjellohen ne kuader te lojes jane: Leviz MAX, Leviz MIN, Leviz MAX varesisht prej levizjes se MIN (jo me shume)
+
